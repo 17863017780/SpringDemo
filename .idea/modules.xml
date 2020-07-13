@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/SpringDemo.iml" filepath="$PROJECT_DIR$/SpringDemo.iml" />
+      <module fileurl="file://$PROJECT_DIR$/SpringDemo-common/SpringDemo-common.iml" filepath="$PROJECT_DIR$/SpringDemo-common/SpringDemo-common.iml" />
+      <module fileurl="file://$PROJECT_DIR$/SpringDemo-service/SpringDemo-service.iml" filepath="$PROJECT_DIR$/SpringDemo-service/SpringDemo-service.iml" />
+      <module fileurl="file://$PROJECT_DIR$/SpringDemo-web/SpringDemo-web.iml" filepath="$PROJECT_DIR$/SpringDemo-web/SpringDemo-web.iml" />
+    </modules>
+  </component>
+</project>

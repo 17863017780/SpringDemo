@@ -8,14 +8,16 @@
         <outputRelativeToContentRoot value="true" />
         <module name="SpringDemo-common" />
         <module name="SpringDemo-service" />
-        <module name="SpringDemo-web" />
+        <module name="SpringDemo-WEB" />
+        <module name="SpringDemo-worker" />
       </profile>
     </annotationProcessing>
-    <bytecodeTargetLevel>
-      <module name="SpringDemo" target="1.5" />
-      <module name="SpringDemo-common" target="1.5" />
-      <module name="SpringDemo-service" target="1.5" />
-      <module name="SpringDemo-web" target="1.5" />
+    <bytecodeTargetLevel target="1.8">
+      <module name="SpringDemo" target="1.8" />
+      <module name="SpringDemo-common" target="1.8" />
+      <module name="SpringDemo-service" target="1.8" />
+      <module name="SpringDemo-WEB" target="1.8" />
+      <module name="SpringDemo-worker" target="1.8" />
     </bytecodeTargetLevel>
   </component>
 </project>

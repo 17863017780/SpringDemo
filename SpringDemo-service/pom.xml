@@ -11,6 +11,14 @@
 
     <groupId>SpringDemo-service</groupId>
     <artifactId>SpringDemo-service</artifactId>
+    <packaging>jar</packaging>
+    <dependencies>
+        <!--service 依赖-->
+        <dependency>
+            <groupId>org.springframework</groupId>
+            <artifactId>spring-context</artifactId>
+        </dependency>
+    </dependencies>
 
 
 </project>

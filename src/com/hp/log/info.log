@@ -1,8 +1,0 @@
-2020-07-12 14:22:06 下午 [Thread: main][ Class:com.jd.ccjh1.common.log4jTest >> Method: com.jd.ccjh1.common.log4jTest.main(log4jTest.java:20) ]
-INFO:This is info message.
-2020-07-12 14:22:06 下午 [Thread: main][ Class:com.jd.ccjh1.common.log4jTest >> Method: com.jd.ccjh1.common.log4jTest.main(log4jTest.java:22) ]
-ERROR:This is error message.
-2020-07-12 14:24:29 下午 [Thread: main][ Class:com.jd.ccjh1.common.log4jTest >> Method: com.jd.ccjh1.common.log4jTest.main(log4jTest.java:20) ]
-INFO:This is info message.
-2020-07-12 14:24:29 下午 [Thread: main][ Class:com.jd.ccjh1.common.log4jTest >> Method: com.jd.ccjh1.common.log4jTest.main(log4jTest.java:22) ]
-ERROR:This is error message.

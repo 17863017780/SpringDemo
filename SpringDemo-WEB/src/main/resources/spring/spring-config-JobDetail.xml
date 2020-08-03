@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:task="http://www.springframework.org/schema/task"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+       http://www.springframework.org/schema/beans/spring-beans-3.2.xsd
+       http://www.springframework.org/schema/task http://www.springframework.org/schema/task/spring-task.xsd">
+
+    <!--1).org.springframework.scheduling.quartz.JobDetailBean有两个属性.-->
+    <!--　　　　jobClass属性即我们在java代码中定义的任务类.-->
+    <!--　　　　jobDataAsMap属性即该任务类中需要注入的属性值.-->
+    <!--　　2).Quartz的作业触发器有两种(两种任选其一就行)-->
+    <!--　　　　org.springframework.scheduling.quartz.SimpleTriggerFactoryBean:只支持按照一定频度调用任务，如每隔30分钟运行一次.-->
+    <!--　　　　org.springframework.scheduling.quartz.CronTriggerFactoryBean:支持到指定时间运行一次，如每天12:00运行一次等.-->
+    <!--　　　　关于第二种触发器的Cron表达式，请参见另一篇博客：摆脱Spring 定时任务的@Scheduled cron表达式的困扰-->
+    <!--　　3).org.springframework.scheduling.quartz.SchedulerFactoryBean的参数triggers指定的就是之前配置的触发器的名字.-->
+
+    <!--在spring配置文件中配置作业类JobDetailFactoryBean、作业调度的触发方式（触发器）、调度工厂-->
+    <bean name="secondCron" class="org.springframework.scheduling.quartz.JobDetailFactoryBean">
+        <property name="jobClass" value="com.jd.ccjh1.worker.doWorker"/>
+        <property name="jobDataAsMap">
+            <map>
+                <entry key="timeout" value="0"/>
+            </map>
+        </property>
+    </bean>
+
+    <!--按照一定频率的触发器-->
+    <bean id="simpleTrigger" class="org.springframework.scheduling.quartz.SimpleTriggerFactoryBean">
+        <property name="jobDetail" ref="secondCron"/>
+        <property name="startDelay" value="0"/>
+        <property name="repeatInterval" value="2000"/>
+    </bean>
+    <!--Cron表达式触发器-->
+    <!--<bean id="cronTrigger" class="org.springframework.scheduling.quartz.CronTriggerFactoryBean">-->
+        <!--<property name="jobDetail" ref="secondCron"/>-->
+        <!--<property name="cronExpression" value="0/5 * * * * ?"/>-->
+    <!--</bean>-->
+
+    <!--配置调度工厂-->
+    <bean class="org.springframework.scheduling.quartz.SchedulerAccessorBean">
+        <property name="triggers">
+            <list>
+                <ref bean="simpleTrigger"/>
+            </list>
+        </property>
+
+    </bean>
+
+</beans>

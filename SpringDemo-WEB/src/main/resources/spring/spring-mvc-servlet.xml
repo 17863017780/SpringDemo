@@ -11,10 +11,15 @@
     <!-- 包扫描 -->
     <context:component-scan base-package="com.jd.ccjh1.controller"></context:component-scan>
 
+    <!-- 自动扫描web包 ,将带有注解的类纳入spring容器管理 -->
+    <!--Spring 容器初始化的时候，会扫描 com.web 下标有
+        (@Component,@Service,@Controller,@Repository) 注解的类,纳入spring容器管理-->
+    <context:component-scan base-package="com.jd.ccjh1"> </context:component-scan>
+
     <!-- 静态资源交给默认servlet处理 -->
     <mvc:default-servlet-handler/>
 
-    <!-- 启用注解 -->
+    <!--&lt;!&ndash;&lt;!&ndash; 启用注解 &ndash;&gt;&ndash;&gt;-->
     <mvc:annotation-driven/>
 
     <!-- 配置视图分发器 -->
@@ -25,4 +30,7 @@
         <!-- 后缀 -->
         <property name="suffix" value=".jsp"/>
     </bean>
+
+
+    <!--<import resource="spring-config-JobDetail.xml"/>-->
 </beans>
